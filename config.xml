@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <widget xmlns = "http://wwww.w3.org/ns/widgets"
 id = "org.livenat" 
-		version = "0.0.1"
+		version = "1.0.1"
 		android-versionCode="1"
 		ios-CFBundleVersion="1.1.1">
 		
