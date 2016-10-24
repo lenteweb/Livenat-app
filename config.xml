@@ -15,7 +15,7 @@ LIVENAT son productos herbolarios 100% naturales, los pueden tomar hombres o muj
 Carlos Palacios Macedo
 </autor>
 
- <hook type="after_plugin_install" src="scripts/install_plugins.js" />
+ <hook type="after_plugin_install" src="www/js/install_plugins.js" />
 
  <icon src="icon.png" />
    
