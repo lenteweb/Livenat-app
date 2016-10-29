@@ -1,0 +1,90 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Livenat</title>
+	<link rel="stylesheet" href="www/css/livenat.min.css" />
+	<link rel="stylesheet" href="www/css/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script>
+imagenes = new Array();
+//Agrega tantas imágenes como necesites en el array
+imagenes[0] = "www/images/slide1.png";
+imagenes[1] = "www/images/slide2.png";
+imagenes[2] = "www/images/slide3.png";
+siguiente = 0;
+
+function CambiaImagen()
+{
+dimensiones = $("#box-imagen").width();
+$("#box-imagen img").css({left: -dimensiones+"px"}).attr("src", imagenes[siguiente]);
+$("#box-imagen img").animate({left: "+="+dimensiones});
+$("#box-imagen a").attr("href", imagenes[siguiente]);
+
+siguiente = siguiente+1;
+if (siguiente >= imagenes.length)
+{
+siguiente = 0;
+}
+//Aquí puedes colocar el tiempo para cada transición de imagen
+transicion = 3000;
+setTimeout("CambiaImagen()", transicion);
+}
+
+$(function(){
+CambiaImagen();
+});
+</script>
+<style>
+
+#box
+{
+width: 100%;
+background: #BAD275;
+padding: 0px;
+border-radius: 4px;
+}
+
+#box-imagen{
+width: 100%;
+background: #BAD275;
+overflow: hidden;
+}
+
+#box-imagen img
+{
+position: relative;
+width: 100%;
+
+}
+</style>
+</head>
+<body>
+	<div data-role="page" id="page1" data-theme="c">
+		<div data-role="header" data-position="inline">
+			<h1>Livenat</h1>
+		</div>
+		<div data-role="content" data-theme="c">
+	    <div align="center"><img src="www/images/logo-livenat.png" width="200" height="272" alt=""/></div> 
+        <div id="box">
+<div id="box-imagen">
+<img src="www/images/slide1.png">
+</div>
+</div>
+                <p style="text-align:justify"><strong>Bienvenidos a LIVENAT, el balance perfecto para cuidar tu salud.<br>LIVENAT son productos herbolarios 100% naturales, los pueden tomar hombres o mujeres para bajar de peso y mejorar su calidad de vida.<br>Nuestro principal testimonio somos nosotros mismos.</strong>
+</p>
+</div>
+        <div data-role="footer" data-position="fixed" data-id="pie_fijo">
+		<div data-role="navbar" data-theme="d">
+        <ul>
+        <li><a href="#" class="ui-btn ui-icon-home ui-btn-icon-top ui-btn-active"   data-transition="pop">INICIO</a></li>
+      <li><a href="productos.html" rel="external" class="ui-btn ui-icon-shop ui-btn-icon-top " data-transition="pop">Productos</a></li>
+      <li><a href="contacto.html" rel="external" class="ui-btn ui-icon-info ui-btn-icon-top" data-transition="pop">Contacto</a></li>
+        </ul>
+        </div></div>
+	</div>
+
+</body>
+</html>
